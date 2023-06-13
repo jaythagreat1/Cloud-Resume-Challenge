@@ -24,7 +24,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: pytest _test.py
 
       - name: Deploy to AWS Lambda
         run: |
@@ -33,7 +33,7 @@ jobs:
           aws lambda update-function-code --function-name Cloudres --zip-file fileb://lambda.zip --region us-east-1
 
       - name: Run pytest
-        run: pytest
+        run: pytest _test.py
         shell: /usr/bin/bash -e {0}
         env:
           pythonLocation: /opt/hostedtoolcache/Python/3.8.16/x64
