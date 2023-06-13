@@ -1,4 +1,4 @@
-name: CI/CD Pipeline for Lambda Function
+name: CI/CD Pipeline for lambda function 
 
 on:
   push:
@@ -11,30 +11,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          node-version: '16'
-
+        uses: actions/checkout@v2
+    
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-
+    
       - name: Install dependencies
         run: pip install -r requirements.txt
-
+    
       - name: Run tests
-        run: pytest _test.py
-
+        run: pytest
+    
       - name: Deploy to AWS Lambda
         run: |
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws lambda update-function-code --function-name Cloudres --zip-file fileb://lambda.zip --region us-east-1
-
-      - name: Run pytest
-        run: pytest _test.py
-        shell: /usr/bin/bash -e {0}
-        env:
-          pythonLocation: /opt/hostedtoolcache/Python/3.8.16/x64
-          LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.16/x64/lib
+    
