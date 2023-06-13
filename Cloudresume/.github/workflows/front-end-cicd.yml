@@ -1,4 +1,4 @@
-name: Uploaded cloudresume to S3 & CI/CD Pipeline for Lambda Function
+name: Upload cloudresume to S3
 
 on:
   push:
@@ -6,17 +6,12 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
-      - name: Build Frontend
-        run: npm install && npm run build
-
-      - name: Deploy Frontend to S3
+      - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -25,21 +20,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-east-1'
-          SOURCE_DIR: './frontend/dist'
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
-      - name: Install Backend Dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run Backend Tests
-        run: pytest back-end-cicd pytest_test.py
-
-      - name: Deploy Backend to AWS Lambda
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws lambda update-function-code --function-name Cloudres --zip-file fileb://lambda.zip --region us-east-1
+          SOURCE_DIR: './'
