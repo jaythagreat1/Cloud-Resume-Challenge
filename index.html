@@ -207,17 +207,28 @@
     <div class="resume-section-content">
       <h2 class="mb-5">Views</h2>
       <p>This website has been viewed <span id="visits"></span> times.</p>
-      <script>
-        const counter = document.querySelector("#visits"); // Use the id selector instead of class selector
-        
-        async function updateCounter() {
-          let response = await fetch("https://bwgqxcun2tyeadllmraojp72r40gwgny.lambda-url.us-east-1.on.aws/");
-          let data = await response.json();
-          counter.innerHTML = data; // Update the content directly, no need for the "Views: " prefix
-        }
-        
-        updateCounter(); // Call the function to update the counter
-      </script>
+<script>
+  const counter = document.querySelector("#visits");
+
+  async function updateCounter() {
+    try {
+      let response = await fetch("https://bwgqxcun2tyeadllmraojp72r40gwgny.lambda-url.us-east-1.on.aws/");
+      let data = await response.text();
+
+      if (data) {
+        counter.innerHTML = data;
+      } else {
+        counter.innerHTML = "N/A"; // Display "N/A" if the view count is not available in the response
+      }
+    } catch (error) {
+      console.log(error);
+      counter.innerHTML = "Error"; // Display "Error" if there is an error fetching the data
+    }
+  }
+
+  updateCounter();
+</script>
+
     </div>
   </section>
   

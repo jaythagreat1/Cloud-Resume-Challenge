@@ -19,4 +19,10 @@ def lambda_handler(event, context):
         views = 1
         print(f"The website has been viewed {views} time.")
 
-    return views
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'text/plain'
+        },
+        'body': str(views)
+    }
