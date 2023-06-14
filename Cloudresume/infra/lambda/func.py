@@ -1,10 +1,14 @@
 import json
 import boto3
 
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('cloudresume')
+# Specify the AWS region where your DynamoDB table is located
+region = 'us-east-1'
 
 def lambda_handler(event, context):
+    # Create the DynamoDB resource with the specified region
+    dynamodb = boto3.resource('dynamodb', region_name=region)
+    table = dynamodb.Table('cloudresume')
+
     response = table.get_item(Key={'id': '1'})
     if 'Item' in response:
         views = response['Item'].get('views', 0)
