@@ -14,9 +14,6 @@ def lambda_handler(event, context):
         views = 1
         print(f"The website has been viewed {views} times.")
 
-<<<<<<< HEAD
-    return views
-=======
     return views
 
 def smoke_test():
@@ -30,4 +27,3 @@ def smoke_test():
 
 if __name__ == '__main__':
     smoke_test()
->>>>>>> fcf455a4dd3abb5ffeb96e80670ae27cc6fb1aca
