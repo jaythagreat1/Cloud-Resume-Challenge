@@ -3,7 +3,7 @@ resource "aws_lambda_function" "myfunc" {
   source_code_hash = data.archive_file.zip_the_python_code.output_base64sha256
   function_name    = "myfunc"
   role             = aws_iam_role.iam_for_lambda.arn
-  handler          = "func.handler"
+  handler          = "func.lambda_handler"
   runtime          = "python3.9"
 }
 
@@ -49,7 +49,9 @@ resource "aws_iam_policy" "iam_policy_for_resume_project" {
           "Effect" : "Allow",
           "Action" : [
             "dynamodb:UpdateItem",
-			      "dynamodb:GetItem"
+			      "dynamodb:GetItem",
+                    "dynamodb:PutItem"
+
           ],
           "Resource" : "arn:aws:dynamodb:*:*:table/cloudresume"
         },

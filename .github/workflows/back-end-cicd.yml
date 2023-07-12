@@ -31,4 +31,6 @@ jobs:
         run: python3 .github/workflows/_test.py
 
       - name: Deploy to AWS Lambda
-        run: aws lambda update-function-code --function-name myfunc --zip-file fileb://Cloudresume/infra/lambda/func.zip
+        run: |
+          aws lambda update-function-code --function-name Cloudres --zip-file fileb://Cloudresume/infra/lambda/func.zip
+
