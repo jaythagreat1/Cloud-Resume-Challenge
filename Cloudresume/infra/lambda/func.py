@@ -1,14 +1,9 @@
-import json
 import boto3
 
-# Specify the AWS region where your DynamoDB table is located
-region = 'us-east-1'
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('cloudresume')
 
 def lambda_handler(event, context):
-    # Create the DynamoDB resource with the specified region
-    dynamodb = boto3.resource('dynamodb', region_name=region)
-    table = dynamodb.Table('cloudresume')
-
     response = table.get_item(Key={'id': '1'})
     if 'Item' in response:
         views = response['Item'].get('views', 0)
@@ -19,10 +14,16 @@ def lambda_handler(event, context):
         views = 1
         print(f"The website has been viewed {views} time.")
 
-    return {
-        'statusCode': 200,
-        'headers': {
-            'Content-Type': 'text/plain'
-        },
-        'body': str(views)
-    }
+    return views
+
+def smoke_test():
+    try:
+        event = {}
+        context = {}
+        result = lambda_handler(event, context)
+        print("Smoke test passed.")
+    except Exception as e:
+        print(f"Smoke test failed. Error: {str(e)}")
+
+if __name__ == '__main__':
+    smoke_test()
