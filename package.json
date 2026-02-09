@@ -1,0 +1,21 @@
+{
+  "name": "fresh-clone",
+  "version": "1.0.0",
+  "description": "Welcome to my Cloud Resume Challenge repository! This challenge is designed for individuals who are interested in kickstarting their career in the cloud. It consists of 16 steps, grouped into 5 different chunks, and offers the flexibility to choose from three major cloud service providers: Microsoft Azure, Google Cloud Platform (GCP), or Amazon Web Services (AWS). For this particular challenge, I have chosen the AWS track.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaythagreat1/cloud-resume-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jaythagreat1/cloud-resume-challenge/issues"
+  },
+  "homepage": "https://github.com/jaythagreat1/cloud-resume-challenge#readme"
+}
