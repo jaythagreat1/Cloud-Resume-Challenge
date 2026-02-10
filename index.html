@@ -94,6 +94,8 @@
     <link href="css/styles.min.css" rel="stylesheet" />
     <!-- Print stylesheet -->
     <link href="css/print.css" rel="stylesheet" media="print" />
+    <!-- Mobile responsive stylesheet -->
+    <link href="css/mobile-responsive.css" rel="stylesheet" />
 </head>
 </html>
     <body id="page-top">
@@ -110,7 +112,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#websites">Websites</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#views">Views</a></li>   
@@ -269,12 +271,136 @@
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
+            <!-- Projects -->
+            <section class="resume-section" id="projects">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a Cloud Architect, I spend my time going to the gym and playing video games. I am an avid gamer and at times play video games competively. During the warmer months here in NYC, I enjoy Music festivals, Concerts, and Sporting events  .</p>
-                    <p class="mb-0"> When I am not outdoors, I enjoy indulging in action and fantasy movies and television shows, as well as exploring my passion for cooking. Additionally, I have a strong desire for learning and spend a significant amount of my free time keeping up-to-date with the latest trends in cloud technologies and advancements. I am particularly interested in how AWS will be utilized to optimize business operations and create innovative solutions within the AI/Data Science sector.</p>
+                    <h2 class="mb-5">Professional Projects</h2>
+
+                    <!-- Project 1: Cloud Resume Challenge -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Serverless Resume Website</h3>
+                            <div class="subheading mb-3">
+                                <a href="https://resume.johnathancloudspace.com" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt me-1"></i>View Live Project
+                                </a>
+                                <span class="mx-2">|</span>
+                                <a href="https://github.com/jaythagreat1/Cloud-Resume-Challenge" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View Code
+                                </a>
+                            </div>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Built fully serverless website using S3, CloudFront, API Gateway, Lambda, and DynamoDB
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Implemented visitor counter with Python Lambda function and DynamoDB state management
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Deployed infrastructure as code using CloudFormation, achieving 99.9% uptime with <500ms response time
+                            </p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">AWS Lambda</span>
+                                <span class="badge bg-primary me-2 mb-2">S3</span>
+                                <span class="badge bg-primary me-2 mb-2">CloudFront</span>
+                                <span class="badge bg-primary me-2 mb-2">DynamoDB</span>
+                                <span class="badge bg-primary me-2 mb-2">Python</span>
+                                <span class="badge bg-primary me-2 mb-2">CloudFormation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Textract Document Processor -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">AWS Textract Document Intelligence</h3>
+                            <div class="subheading mb-3">
+                                <a href="https://github.com/jaythagreat1/textract-document-processor" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View Code
+                                </a>
+                            </div>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Serverless document processing system extracting text, forms, and tables from PDFs using AWS Textract
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Achieved 98% time reduction in document processing with 99%+ accuracy rate
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Scaled to handle 10,000 requests/second using API Gateway and Lambda auto-scaling
+                            </p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">AWS Textract</span>
+                                <span class="badge bg-primary me-2 mb-2">Lambda</span>
+                                <span class="badge bg-primary me-2 mb-2">API Gateway</span>
+                                <span class="badge bg-primary me-2 mb-2">S3</span>
+                                <span class="badge bg-primary me-2 mb-2">Python</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Meeting Intelligence -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">AI Meeting Intelligence & Action Tracker</h3>
+                            <div class="subheading mb-3">
+                                <a href="https://github.com/jaythagreat1/meeting-intelligence" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View Code
+                                </a>
+                            </div>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Event-driven AI system using AWS Transcribe, Bedrock, and Comprehend for automated meeting transcription
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Automated action item extraction and follow-through using Step Functions and SES workflows
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Achieved 90% action completion rate, saving 100+ hours/week for enterprise teams
+                            </p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">Amazon Bedrock</span>
+                                <span class="badge bg-primary me-2 mb-2">AWS Transcribe</span>
+                                <span class="badge bg-primary me-2 mb-2">Comprehend</span>
+                                <span class="badge bg-primary me-2 mb-2">Step Functions</span>
+                                <span class="badge bg-primary me-2 mb-2">Lambda</span>
+                                <span class="badge bg-primary me-2 mb-2">DynamoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Smart Contract Analyzer -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">GenAI Smart Contract Analyzer</h3>
+                            <div class="subheading mb-3">Enterprise Legal Document Review</div>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Built GenAI-powered contract analysis using Amazon Bedrock (Claude) for automated legal document review
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Implemented risk detection, compliance checking, and executive summary generation using RAG architecture
+                            </p>
+                            <p>
+                                <i class="fas fa-chevron-right text-primary me-2"></i>
+                                Reduced contract review time from hours to minutes with 95%+ accuracy in identifying key clauses
+                            </p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">Amazon Bedrock</span>
+                                <span class="badge bg-primary me-2 mb-2">Claude AI</span>
+                                <span class="badge bg-primary me-2 mb-2">Lambda</span>
+                                <span class="badge bg-primary me-2 mb-2">RAG</span>
+                                <span class="badge bg-primary me-2 mb-2">S3</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <hr class="m-0" />

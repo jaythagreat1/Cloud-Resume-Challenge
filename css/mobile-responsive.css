@@ -1,0 +1,87 @@
+/* Mobile Profile Picture Optimization */
+
+/* Profile image responsive sizing */
+.img-profile,
+.img-fluid.rounded-circle,
+#sideNav .navbar-brand .img-profile {
+    max-width: 100% !important;
+    height: auto !important;
+    width: 100% !important;
+    max-height: 200px !important; /* Prevent huge images on desktop */
+    object-fit: cover !important; /* Crop to fit without distortion */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .img-profile,
+    .img-fluid.rounded-circle,
+    #sideNav .navbar-brand .img-profile {
+        max-width: 150px !important; /* Smaller on mobile */
+        max-height: 150px !important;
+        margin: 0 auto !important; /* Center on mobile */
+        display: block !important;
+    }
+
+    /* Ensure sidebar doesn't take full screen on mobile */
+    #sideNav {
+        max-height: 100vh !important;
+        overflow-y: auto !important;
+    }
+
+    /* Make sure profile section doesn't overwhelm screen */
+    #sideNav .navbar-brand {
+        padding: 1rem !important;
+    }
+
+    /* Ensure projects section is readable on mobile */
+    .badge {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    /* Make links more touchable on mobile */
+    .nav-link, .social-icon {
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+
+/* Extra small screens (phones in portrait) */
+@media (max-width: 480px) {
+    .img-profile,
+    .img-fluid.rounded-circle,
+    #sideNav .navbar-brand .img-profile {
+        max-width: 120px !important; /* Even smaller on small phones */
+        max-height: 120px !important;
+    }
+
+    /* Adjust font sizes for small screens */
+    .subheading {
+        font-size: 0.9rem !important;
+    }
+
+    /* Stack badges vertically on very small screens */
+    .badge {
+        display: block !important;
+        width: fit-content !important;
+        margin: 0.2rem auto !important;
+    }
+}
+
+/* iOS Safari specific fix */
+@supports (-webkit-touch-callout: none) {
+    .img-profile,
+    .img-fluid.rounded-circle {
+        -webkit-transform: translateZ(0); /* Hardware acceleration */
+    }
+}
+
+/* High DPI screen optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .img-profile,
+    .img-fluid.rounded-circle {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
