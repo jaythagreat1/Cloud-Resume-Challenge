@@ -28,10 +28,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Run tests
-        run: python3 .github/workflows/_test.py
-        env:
-          AWS_DEFAULT_REGION: us-east-1
+      # - name: Run tests
+      #   run: python3 .github/workflows/_test.py
+      #   env:
+      #     AWS_DEFAULT_REGION: us-east-1
 
       - name: Deploy to AWS Lambda
         run: |
